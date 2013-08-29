@@ -18,7 +18,7 @@ app.configure(function() {
 
 // Render homepage (note trailing slash): example.com/
 app.get('/', function(req, res) {
-  res.render("index.jade", {layout:false});
+  res.render("index.jade");
 });
 
 // Render example.com/orders
@@ -28,7 +28,7 @@ app.get('/orders', function(request, response) {
     orders.forEach(function(order) {
       orders_json.push({id: order.coinbase_id, amount: order.amount, time: order.time});
     });
-    // Uses views/orders.ejs
+    // Uses views/orders.jade
     response.render("orders", {orders: orders_json});
   }).error(function(err) {
     console.log(err);
@@ -70,6 +70,31 @@ app.get('/refresh_orders', function(request, response) {
     });
   });
 
+});
+
+// request to coinbase to get count of money
+app.get('/balance', function(request, response) {
+    https.get("https://coinbase.com/api/v1/account/balance?api_key=" + process.env.COINBASE_API_KEY, function(res) {
+      var body = '';
+      res.on('data', function(chunk) {body += chunk;});
+      res.on('end', function() {
+        try {
+          var amount = JSON.parse(body);
+          if (amount.error) {
+            response.send(amount.error);
+            return;
+          }
+          response.send((amount.amount).substring(0, 3));
+        } catch(error) {
+          console.log(error);
+          response.send("error parsing json");
+        }
+      });
+      res.on('error', function(e) {
+        console.log(e);
+        response.send("error syncing amount");
+      });
+    });
 });
 
 // sync the database and start the server
