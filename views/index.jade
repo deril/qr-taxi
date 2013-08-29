@@ -1,0 +1,159 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title My First Bitstarter
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css')
+    link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css')
+    link(rel='stylesheet', href='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css')
+    script(src='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js')
+    script(src='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js')
+    link(href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800', rel='stylesheet', type='text/css')
+    link(rel="stylesheet", href="/styles/styles.css")
+    script(type='text/javascript').
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42931609-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#') Bitstarter
+          .nav-collapse.collapse
+            ul.nav
+              li.active
+                a(href='#') Home
+              li
+                a(href='#about') About
+              li
+                a(href='/orders') Orders
+              li
+                a(href='#contact') Contact
+          // /.nav-collapse
+    .container
+      .row-fluid.heading
+        .span12
+          h1 QR-Taxi
+      .row-fluid.subheading
+        .span12
+          p.lead Call a cab by one touch
+      .row-fluid.pitch
+        .span5.offset1.video
+          img.img-polaroid(src='http://i.imgur.com/K3jAM92.png', alt='qr-taxi-logo')
+        .span5.actions
+          .row-fluid
+            .span8.offset2
+              .row-fluid.statistics
+                .span4
+                  .linediv-l
+                    h3 1000
+                    p backers
+                .span4
+                  .linediv-c
+                    h3 $6000
+                    p of $10,000
+                .span4
+                  .linediv-r
+                    h3 10
+                    p days left
+            .row-fluid
+              .span10.offset1
+                .thermometer.progress.active
+                  .bar.bar-success(style='width: 60%;')
+                  .bar.bar-warning(style='width: 40%;')
+            .row-fluid
+              .span6.offset3.order
+                a.coinbase-button(data-code='08c0f59363a8e388712c9e3cb6c8db57', data-button-style='custom_large', data-button-text='Preorder with Bitcoin', href='https://coinbase.com/checkouts/08c0f59363a8e388712c9e3cb6c8db57') Preorder with Bitcoin
+                script(src='https://coinbase.com/assets/button.js', type='text/javascript')
+            .row-fluid
+              .span8.offset2.social
+                // AddThis Button BEGIN
+                .addthis_toolbox.addthis_default_style.addthis_32x32_style
+                  a.addthis_button_preferred_1
+                  a.addthis_button_preferred_2
+                  a.addthis_button_preferred_3
+                  a.addthis_button_preferred_4
+                  a.addthis_button_compact
+                  a.addthis_counter.addthis_bubble_style
+                script(type='text/javascript').
+                  var addthis_config =
+                  {"data_track_addressbar":true};
+                script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51faedf3598438bb')
+                // AddThis Button END
+      .row-fluid.section1
+        .span5.offset1.asset
+          img.img-polaroid(src='http://i.imgur.com/h56Via4.png', alt='man-scan-qr')
+        .span5.copy
+          p
+            | Скільки разів у Вас було, що Ви не пам’ятаєте номер служби таксі?
+            | А чи постійно у Вас на рахунку є потрібна сума коштів, щоб викликати таксі?
+            | Чи впевнені Ви, що пам’ятаєте код міста, щоб вірно набрати
+            | номер виклику? А як телефонувати за цими короткими чотиразначними номерами з мобільного
+            | і бути впевненим що Вас з’єднають саме зі службою таксі? Чи часто зупиняється таксі,
+            | якщо Ви вирішили зупинити його серед вулиці?
+      .row-fluid.section2
+        .span5.offset1.copy.copy-right
+          p
+            | Ви можете розміщувати QR код на місцях, де найчастіше клієнтам на вулиці
+            | потрібно викликати службу таксі. Запит передається напряму до обробника запитів
+            | (в хмарному сервісі). Відпадає необхідність у великій кількості диспечерів,
+            | від тепер все обробляється в автоматичному режимі. До водія засобами радіозв’язку
+            | надходить інформація про місце розташування клієнта, водій приймає виклик, і на телефон
+            | клієнта надходить інформація про те, що його запит прийнятий, і приблизний термін очікування.
+        .span5.asset
+          img.img-polaroid(src='http://i.imgur.com/5H9axbc.png', alt='cab')
+      .row-fluid.faq
+        .span10.offset1
+          h3 FAQ
+          #accordion2.accordion
+            .accordion-group
+              .accordion-heading
+                a.accordion-toggle(data-toggle='collapse', data-parrent='#accordion2', href='#collapseOne')
+                  | Для чого потрібне QR Taxi?
+              #collapseOne.accordion-body.collapse
+                .accordion-inner
+                  | Для зручного користування споживачами послуг таксі та для самих таксистів.
+            .accordion-group
+              .accordion-heading
+                a.accordion-toggle(data-toggle='collapse', data-parrent='#accordion2', href='#collapseTwo')
+                  | У чому заключається зручність?
+              #collapseTwo.accordion-body.collapse
+                .accordion-inner
+                  | Споживачам не потрібно запам’ятовувати довгі номера служб для виклику таксі,
+                  | очікувати в черзі відповіді, а можна миттєво надіслати запит і швидко отримати відповідь
+                  | про його реєстрацію, користуючись лише свої смартфоном
+            .accordion-group
+              .accordion-heading
+                a.accordion-toggle(data-toggle='collapse', data-parrent='#accordion2', href='#collapseThree')
+                  | Чим виграє мій бізнес?
+              #collapseThree.accordion-body.collapse
+                .accordion-inner
+                  | Більше не буде необхідності платити зарплату значній кількості диспечерів,
+                  | адже використовуючи QR Taxi у Вас буде цифровий диспечер, який сам надаватиме
+                  | координати клієнтів
+      .row-fluid.footer
+        .span12
+          p
+            | This work is licensed under the 
+            a(href='http://creativecommons.org/licenses/by-sa/3.0/') CC By-SA 3.0
+            | , without all the cruft that would otherwise be
+            | put at the bottom of the page.
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-42931609-1', 'herokuapp.com');
+      ga('send', 'pageview');
+

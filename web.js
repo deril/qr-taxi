@@ -8,14 +8,17 @@ var async   = require('async')
   , db      = require('./models');
 
 var app = express();
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.set('port', process.env.PORT || 8080);
+app.configure(function() {
+  app.set('view engine', 'jade');
+  app.use(express.static(__dirname + '/public'));
+  app.set('port', process.env.PORT || 8080);
+});
+  //app.set('views', __dirname + '/views');
+//app.set('view engine', 'ejs');
 
 // Render homepage (note trailing slash): example.com/
-app.get('/', function(request, response) {
-  var data = fs.readFileSync('index.html').toString();
-  response.send(data);
+app.get('/', function(req, res) {
+  res.render("index.jade", {layout:false});
 });
 
 // Render example.com/orders
