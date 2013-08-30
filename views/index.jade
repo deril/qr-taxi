@@ -9,6 +9,7 @@ html(lang='en')
     link(rel='stylesheet', href='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css')
     script(src='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js')
     script(src='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js')
+    script(src="/js/bootstrap.min.js")
     link(href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic', rel='stylesheet', type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800', rel='stylesheet', type='text/css')
     link(rel="stylesheet", href="/styles/styles.css")
@@ -26,6 +27,10 @@ html(lang='en')
         method: "GET",
         success: function(data) {
           $(".linediv-c h3").append(data + " BTC");
+          $(".thermometer").removeClass("progress-striped");
+          data = parseInt(data);
+          $(".bar-success").css("width", data + "%");
+          $(".bar-warning").css("width", (100 - data) + "%");
         },
         error: function() {
           $(".linediv-c h3").append("10 BTC");
@@ -78,9 +83,9 @@ html(lang='en')
                     p days left
             .row-fluid
               .span10.offset1
-                .thermometer.progress.active
-                  .bar.bar-success(style='width: 60%;')
-                  .bar.bar-warning(style='width: 40%;')
+                .thermometer.progress.active.progress-striped
+                  .bar.bar-success(style='width: 10%;')
+                  .bar.bar-warning(style='width: 90%;')
             .row-fluid
               .span6.offset3.order
                 a.coinbase-button(data-code='08c0f59363a8e388712c9e3cb6c8db57', data-button-style='custom_large', data-button-text='Preorder with Bitcoin', href='https://coinbase.com/checkouts/08c0f59363a8e388712c9e3cb6c8db57') Preorder with Bitcoin
