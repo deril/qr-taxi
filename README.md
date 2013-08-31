@@ -10,21 +10,19 @@ Bug reports can be viewed/added on the github issues page.
 Getting Started
 ---------------
 
-To run the site on you local machine do the following steps (it
-assumes that you use rvm).
+To run the site on you local machine do the following steps:
 
-1.  Run npm install
+1.  Install required packages with npm:
 
     ```
     npm intstall
     ```
 
-2.  Create file `.env`. You can use `.env.dummy`
-    as an example.
+2.  Create the `.env` file. You can use `.env.dummy` as an example.
 
-3.  Run script which install postgresql to your local machine and create user/database:
-    
+3.  Run a script which installs postgresql to your local machine and
+    creates a user/database:
+
     ```bash
     ./pgsetup.sh
     ```
-
