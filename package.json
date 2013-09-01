@@ -1,6 +1,6 @@
 {
   "name": "bitstarter-ssjs-orders",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple server-side JS order processing",
   "main": "web.js",
   "scripts": {
